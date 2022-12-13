@@ -1,22 +1,17 @@
 # User input class
-class user_input:
-    def __init__(self, name):
-        self.name = name
-    
-    def get_name(self):
-        return self.name
-    
-    def set_name(self, name):
-        self.name = name
+class UserInput:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
         
-    def get_name(self):
-        return self.name
+    def set_start(self, start):
+        self.start = start
+        
+    def set_end(self, end):
+        self.end = end
+        
+    def get_start(self):
+        return self.start
     
-    def set_name(self, name):
-        self.name = name
-
-# to use : initialise two objects
-# current_location = user_input("M")
-# destination = user_input("B1")
-
-# other functions
+    def get_end(self):
+        return self.end

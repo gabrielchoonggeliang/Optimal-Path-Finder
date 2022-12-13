@@ -1,5 +1,7 @@
 # A* algorithm
-campus = [(0, -1), (0, 1), (-1, 0), (1, 0), (-1, -1), (-1, 1), (1, -1), (1, 1)]
+# Author: J. Patrick Farrell
+
+from route import campus, val
 
 class Node():
     """A node class for A* Pathfinding"""
@@ -16,13 +18,13 @@ class Node():
         return self.position == other.position
 
 
-def astar(maze, start, end):
+def astar(route, start, end):
 
     # Create start and end node
     start_node = Node(None, start)
-    start_node.g = start_node.h = start_node.f = 0
+    start_node.g = start_node.h = start_node.f = 0  # zero because it's the start node
     end_node = Node(None, end)
-    end_node.g = end_node.h = end_node.f = 0
+    end_node.g = end_node.h = end_node.f = 0  # zero because it's the end node
 
     # Initialize both open and closed list
     open_list = []
@@ -60,14 +62,16 @@ def astar(maze, start, end):
         for new_position in campus: # Adjacent squares
 
             # Get node position
+            # For example: ("B", "LY3")
+            # TODO: find out how to get the position of the node
             node_position = (current_node.position[0] + new_position[0], current_node.position[1] + new_position[1])
 
             # Make sure within range
-            if node_position[0] > (len(maze) - 1) or node_position[0] < 0 or node_position[1] > (len(maze[len(maze)-1]) -1) or node_position[1] < 0:
+            if node_position[0] > (len(route) - 1) or node_position[0] < 0 or node_position[1] > (len(route[len(route)-1]) -1) or node_position[1] < 0:
                 continue
 
             # Make sure walkable terrain
-            if maze[node_position[0]][node_position[1]] != 0:
+            if route[node_position[0]][node_position[1]] != 0:
                 continue
 
             # Create new node
