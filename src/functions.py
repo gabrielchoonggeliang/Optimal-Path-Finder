@@ -1,3 +1,5 @@
+from sys import exit
+
 # User input class
 class UserInput:
     def __init__(self, start, end):
@@ -15,3 +17,13 @@ class UserInput:
     
     def get_end(self):
         return self.end
+    
+def answer(list):
+    for i in list:
+        if i != list[-1]:
+            print(i, end=" > ")
+        else:
+            print(i)
+
+def exit():
+    exit(0)

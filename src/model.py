@@ -1,7 +1,6 @@
 # A* algorithm
-# Author: J. Patrick Farrell
 
-from route import campus, val
+from route import campus, location, heuristic_cost
 
 class Node():
     """A node class for A* Pathfinding"""
@@ -16,6 +15,9 @@ class Node():
 
     def __eq__(self, other):
         return self.position == other.position
+    
+    def __hash__(self):
+        return hash(self.position)
 
 
 def astar(route, start, end):
@@ -64,17 +66,13 @@ def astar(route, start, end):
             # Get node position
             # For example: ("B", "LY3")
             # TODO: find out how to get the position of the node
-            node_position = (current_node.position[0] + new_position[0], current_node.position[1] + new_position[1])
+            node_position = new_position
 
             # Make sure within range
-            if node_position[0] > (len(route) - 1) or node_position[0] < 0 or node_position[1] > (len(route[len(route)-1]) -1) or node_position[1] < 0:
+            if node_position[0] in location.keys():
                 continue
 
-            # Make sure walkable terrain
-            if route[node_position[0]][node_position[1]] != 0:
-                continue
-
-            # Create new node
+            # Create a new node with parent: current_node and position: node_position
             new_node = Node(current_node, node_position)
 
             # Append
@@ -90,8 +88,10 @@ def astar(route, start, end):
 
             # Create the f, g, and h values
             # TODO: update f, g and h values
-            child.g = current_node.g + 1
-            child.h = ((child.position[0] - end_node.position[0]) ** 2) + ((child.position[1] - end_node.position[1]) ** 2)
+            child.g = child.g + 1
+            
+            child.h = heuristic_cost[child.parent.position]
+            
             child.f = child.g + child.h
 
             # Child is already in the open list

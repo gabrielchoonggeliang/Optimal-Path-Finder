@@ -1,5 +1,5 @@
 from model import astar
-from functions import UserInput
+from functions import UserInput, answer
 
 def main():
 
@@ -20,7 +20,7 @@ def main():
     end = current_location.set_end(input())
 
     path = astar(map, current_location.get_start(), current_location.get_end())
-    print(path)
+    answer(path)
 
 
 if __name__ == '__main__':
