@@ -70,6 +70,7 @@
 		write_tab:True
 		on_text_validate:
 		    root.press_button(self)
+		    root.btn_touch_up()
 
 
 
@@ -79,6 +80,7 @@
         size:250,80
         pos:275,100
 		on_press:root.press_button(self)
+		on_release:root.btn_touch_up()
 
 	Button:
 

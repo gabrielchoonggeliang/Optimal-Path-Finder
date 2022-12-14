@@ -1,6 +1,6 @@
 # A* algorithm
 
-from route import campus, heuristic_cost
+from route import campus, location, heuristic_cost
 
 class Node():
     """A node class for A* Pathfinding"""
@@ -20,7 +20,7 @@ class Node():
         return hash(self.position)
 
 
-def astar(route, start, end):
+def astar(start, end):
 
     # Create start and end node
     start_node = Node(None, start)
