@@ -157,4 +157,49 @@ g.addEdge("LY4", "B")
 
 g.addEdge("D4", "B")
 
-path_cost = {}
+cost = {}
+
+cost[( "B", "LY2" )] = 20
+cost[( "LY2", "B" )] = 20
+cost[( "B", "LY3" )] = 18
+cost[( "LY3", "B" )] = 18
+cost[( "B", "LY4" )] = 5
+cost[( "LY4", "B" )] = 5
+cost[( "B", "D4" )] = 7
+cost[( "D4", "B" )] = 7
+cost[( "B", "A5" )] = 7
+cost[( "A5", "B" )] = 7
+cost[( "B", "A4" )] = 12
+cost[( "A4", "B" )] = 12
+cost[( "B", "A3" )] = 14
+cost[( "A3", "B" )] = 14
+cost[( "B", "A2" )] = 16
+cost[( "A2", "B" )] = 16
+cost[( "B", "A1" )] = 18
+cost[( "A1", "B" )] = 18
+cost[( "LY2", "LY1" )] = 4
+cost[( "LY1", "LY2" )] = 4
+cost[( "LY2", "LY3" )] = 2
+cost[( "LY3", "LY2" )] = 2
+cost[( "LY1", "LY3" )] = 3
+cost[( "LY3", "LY1" )] = 3
+cost[( "LY1", "LY6" )] = 2
+cost[( "LY6", "LY1" )] = 2
+cost[( "LY3", "LY6" )] = 4
+cost[( "LY6", "LY3" )] = 4
+cost[( "LY3", "LY7" )] = 3
+cost[( "LY7", "LY3" )] = 3
+cost[( "LY3", "LY8" )] = 5
+cost[( "LY8", "LY3" )] = 5
+cost[( "LY3", "LY4" )] = 4
+cost[( "LY4", "LY3" )] = 4
+cost[( "LY6", "LY7" )] = 4
+cost[( "LY7", "LY6" )] = 4
+cost[( "LY7", "LY8" )] = 6
+cost[( "LY8", "LY7" )] = 6
+cost[( "LY8", "LY4" )] = 3
+cost[( "LY4", "LY8" )] = 3
+cost[( "LY8", "LY5" )] = 2
+cost[( "LY5", "LY8" )] = 2
+cost[( "LY5", "LY4" )] = 4
+cost[( "LY4", "LY5" )] = 4
