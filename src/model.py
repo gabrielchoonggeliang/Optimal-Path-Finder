@@ -1,6 +1,6 @@
 # A* algorithm
 
-from route import campus, heuristic_cost
+from route import campus, location, heuristic_cost
 
 class Node():
     """A node class for A* Pathfinding"""
@@ -24,9 +24,9 @@ def astar(route, start, end):
 
     # Create start and end node
     start_node = Node(None, start)
-    start_node.g = start_node.h = start_node.f = 0  
+    start_node.g = start_node.h = start_node.f = 0  # zero because it's the start node
     end_node = Node(None, end)
-    end_node.g = end_node.h = end_node.f = 0  
+    end_node.g = end_node.h = end_node.f = 0  # zero because it's the end node
 
     # Initialize both open and closed list
     open_list = []
@@ -64,6 +64,8 @@ def astar(route, start, end):
         for new_position in campus: # Adjacent squares
 
             # Get node position
+            # For example: ("B", "LY3")
+            # TODO: find out how to get the position of the node
             node_position = new_position
 
             # Make sure within range
@@ -84,7 +86,8 @@ def astar(route, start, end):
                 if child == closed_child:
                     continue
 
-            # Assign f, g, and h values
+            # Create the f, g, and h values
+            # TODO: update f, g and h values
             child.g = child.g + 1
             
             child.h = heuristic_cost[child.parent.position]

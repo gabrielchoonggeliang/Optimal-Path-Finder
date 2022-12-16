@@ -4,6 +4,9 @@ from route import location
 
 def main():
 
+    map  = location
+
+    # Reference the values to the dictionary
     current_location = UserInput(" ", " ")
     current_location.set_start(input())
     current_location.set_end(input())
@@ -11,11 +14,9 @@ def main():
     start = current_location.get_start()
     end = current_location.get_end()
 
-    map = location
-    global path
     path = astar(map, start, end)
     answer(path)
-    
+
 
 if __name__ == '__main__':
     main()
