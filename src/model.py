@@ -87,7 +87,6 @@ def astar(route, start, end):
                     continue
 
             # Create the f, g, and h values
-            # TODO: update f, g and h values
             child.g = child.g + 1
             
             child.h = heuristic_cost[child.parent.position]

@@ -8,45 +8,44 @@
 
     Label:
         text:'Optimal Path'
-        font_size:25    #字体大小
-        bold:True     #字体加粗
-        color:.9,.2,.1,1   #字体颜色
+        font_size:25
+        bold:True
+        color:.9,.2,.1,1
         pos: 130,480
-        text_size:cm(15),mm(30)   #标签文本框大小
-        halign:'right'    #水平对齐方式
-        valign:'middle'   #垂直对齐方式
-        shorten:True           #文本长度比文本框大是缩短文本
-        shorten_from:'right'   #当shorten:True时，从right右方向缩短文本
+        text_size:cm(15),mm(30)
+        halign:'right'
+        valign:'middle'
+        shorten:True
+        shorten_from:'right'
         markup:True
 
     Label:
         text:'Initial place'
-        font_size:18    #字体大小
-        bold:False     #字体加粗
-        color:.9,.2,.1,1   #字体颜色
+        font_size:18
+        bold:False
+        color:.9,.2,.1,1
         pos: 80,400
-        text_size:cm(5),mm(10)   #标签文本框大小
-        halign:'right'    #水平对齐方式
-        valign:'middle'   #垂直对齐方式
-        shorten:True           #文本长度比文本框大是缩短文本
-        shorten_from:'right'   #当shorten:True时，从right右方向缩短文本
+        text_size:cm(5),mm(10)
+        halign:'right'
+        valign:'middle'
+        shorten:True
+        shorten_from:'right'
         markup:True
 
     Label:
         text:'Target place'
-        font_size:18    #字体大小
-        bold:False     #字体加粗
-        color:.9,.2,.1,1   #字体颜色
+        font_size:18
+        bold:False
+        color:.9,.2,.1,1
         pos: 560, 400
-        text_size:cm(5),mm(10)   #标签文本框大小
-        halign:'right'    #水平对齐方式
-        valign:'middle'   #垂直对齐方式
-        shorten:True           #文本长度比文本框大是缩短文本
-        shorten_from:'right'   #当shorten:True时，从right右方向缩短文本
+        text_size:cm(5),mm(10)
+        halign:'right'
+        valign:'middle'
+        shorten:True
+        shorten_from:'right'
         markup:True
 
     TextInput:
-
         id: IP
 		multiline:False
 		pos:80,330
@@ -56,10 +55,7 @@
         size:200,80
         write_tab:False
 
-
-
 	TextInput:
-
         id: TP
 		multiline:False
 		pos:560,330
@@ -75,7 +71,6 @@
 
 
     Button:
-
         text:'Click me to process your path'
         size:250,80
         pos:275,100
@@ -83,7 +78,6 @@
 		on_release:root.btn_touch_up()
 
 	Button:
-
         text:'Quit'
         size:80,40
         pos:358,50
