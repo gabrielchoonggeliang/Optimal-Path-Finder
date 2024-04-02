@@ -1,5 +1,0 @@
-Mapping out the campus and finding the optimal path between two location
-
-parameters: walking, driving, weather, temperature
-
-Edited @15 November 2022 By: Gabriel Choong
