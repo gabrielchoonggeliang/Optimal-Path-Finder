@@ -30,3 +30,6 @@ Contributions to the Optimal Path Finder project are welcome! If you have ideas 
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Note: Project Under Rewrite
+Please note that this project is currently not functioning as expected. A comprehensive rewrite is underway to improve functionality and performance. Stay tuned for updates on the progress of the rewrite.
